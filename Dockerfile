@@ -20,6 +20,8 @@ RUN usermod -u $USER_UID --non-unique node \
   
 RUN npm install --global --omit=dev @anthropic-ai/claude-code@latest @openai/codex@latest opencode-ai @google/gemini-cli@latest \
   && mkdir -p /paperclip/.gemini \
+  && touch /paperclip/.gemini/trustedFolders.json \
+  && chmod -R 777 /paperclip/.gemini \
   && chown -R node:node /paperclip
 
 FROM base AS deps
