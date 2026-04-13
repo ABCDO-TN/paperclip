@@ -81,3 +81,6 @@ EXPOSE 3100
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["node", "--import", "./server/node_modules/tsx/dist/loader.mjs", "server/dist/index.js"]
+RUN npm install --global --omit=dev @anthropic-ai/claude-code@latest @openai/codex@latest opencode-ai \
+  && mkdir -p /paperclip \
+  && chown node:node /paperclip
