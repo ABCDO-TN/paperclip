@@ -63,6 +63,8 @@ WORKDIR /app
 COPY --chown=node:node --from=build /app /app
 RUN npm install --global --omit=dev @anthropic-ai/claude-code@latest @openai/codex@latest opencode-ai @google/gemini-cli@latest \
   && mkdir -p /paperclip/.gemini \
+  && touch /paperclip/.gemini/trustedFolders.json \
+  && chmod -R 777 /paperclip/.gemini \
   && chown -R node:node /paperclip
 
 COPY scripts/docker-entrypoint.sh /usr/local/bin/
