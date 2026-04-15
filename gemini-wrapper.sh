@@ -13,7 +13,3 @@ if [ "$HAS_PROMPT" = false ] && [ "${#ARGS[@]}" -gt 0 ]; then
     fi
 fi
 exec gemini "${ARGS[@]}"
-EOF
-
-# Fix permissions for the Gemini authentication folder inside the container
-docker exec -i appabcdo-paperclip-2b887e-server-1 chmod -R 777 /paperclip/.gemini
