@@ -83,14 +83,14 @@ ENV NODE_ENV=production \
   PAPERCLIP_DEPLOYMENT_MODE=authenticated \
   PAPERCLIP_DEPLOYMENT_EXPOSURE=private \
   OPENCODE_ALLOW_ALL_MODELS=true
-
-VOLUME ["/paperclip"]
-EXPOSE 3100
-
-ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["node", "--import", "./server/node_modules/tsx/dist/loader.mjs", "server/dist/index.js"]
 #
 # Copy the wrapper script from GitHub repository to the container
 COPY gemini-wrapper.sh /app/gemini-wrapper.sh
 # Make the wrapper script executable during the Docker build process
 RUN chmod +x /app/gemini-wrapper.sh
+#
+VOLUME ["/paperclip"]
+EXPOSE 3100
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["node", "--import", "./server/node_modules/tsx/dist/loader.mjs", "server/dist/index.js"]
