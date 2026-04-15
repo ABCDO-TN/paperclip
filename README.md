@@ -1,3 +1,17 @@
+# Paperclip - Édition ABCDO-TN (Déploiement Dokploy)
+
+Bienvenue sur le fork de Paperclip personnalisé pour l'infrastructure **ABCDO-TN**. Ce projet a été spécifiquement optimisé pour s'exécuter dans un conteneur Docker via **Dokploy** sur un serveur VPS, en utilisant le **Gemini CLI (local)** avec authentification par compte Google (OAuth).
+
+## 1. Prérequis et Architecture
+
+Pour déployer et faire fonctionner ce système de manière optimale, voici l'architecture requise :
+- **Serveur :** Un VPS avec accès root.
+- **Plateforme de déploiement :** [Dokploy](https://dokploy.com) (ou équivalent basé sur Docker).
+- **Authentification IA :** Un compte Google actif. L'authentification OAuth (headless) est utilisée dans ce projet à la place des clés API classiques pour une meilleure stabilité.
+- **Modèles d'IA supportés :** Gemini 3.1 Pro, Gemini 2.5 Pro, et Gemini 2.5 Flash.
+
+---
+
 <p align="center">
   <img src="doc/assets/header.png" alt="Paperclip — runs your business" width="720" />
 </p>
