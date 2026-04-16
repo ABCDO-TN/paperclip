@@ -1,12 +1,16 @@
 export const type = "gemini_local";
 export const label = "Gemini CLI (local)";
-export const DEFAULT_GEMINI_LOCAL_MODEL = "gemini-3.1-pro";
+export const DEFAULT_GEMINI_LOCAL_MODEL = "gemini-3.1-pro-preview";
 
 export const models = [
   { id: DEFAULT_GEMINI_LOCAL_MODEL, label: "Gemini 3.1 Pro" },
   { id: "auto", label: "Auto" },
+  { id: "gemini-3-flash-preview", label: "Gemini 3 Flash Preview" },
+  { id: "gemini-3-flash-preview", label: "Gemini 3 Flash Preview" },
   { id: "gemini-2.5-pro", label: "Gemini 2.5 Pro" },
-  { id: "gemini-2.5-flash", label: "Gemini 2.5 Flash" }
+  { id: "gemini-2.5-flash", label: "Gemini 2.5 Flash" },
+  { id: "gemma-4-31b-it", label: "Gemma 4 31b iT" },
+  { id: "gemma-4-26b-a4b-it", label: "Gemma 4 26b a4b iT" }
 ];
 
 export const agentConfigurationDoc = `# gemini_local agent configuration
