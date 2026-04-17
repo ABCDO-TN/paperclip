@@ -3,14 +3,14 @@ services:
     build:
       context: ..
       dockerfile: Dockerfile
-    ports:
-      - - "${EXTERNAL_PORT:-3101}:3100"
+    # SUPPRESSION TOTALE DE LA SECTION 'ports'
     environment:
-      PORT: "3100"
+      # L'application écoutera sur le port défini par cette variable en interne
+      PORT: "${PORT:-3101}"
       SERVE_UI: "true"
       PAPERCLIP_DEPLOYMENT_MODE: "authenticated"
       PAPERCLIP_DEPLOYMENT_EXPOSURE: "private"
-      PAPERCLIP_PUBLIC_URL: "${PAPERCLIP_PUBLIC_URL:-http://localhost:3100}"
+      PAPERCLIP_PUBLIC_URL: "${PAPERCLIP_PUBLIC_URL}"
       BETTER_AUTH_SECRET: "${BETTER_AUTH_SECRET:?BETTER_AUTH_SECRET must be set}"
       GEMINI_API_KEY: "${GEMINI_API_KEY}"
     volumes:
