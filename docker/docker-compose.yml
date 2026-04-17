@@ -4,7 +4,7 @@ services:
       context: ..
       dockerfile: Dockerfile
     ports:
-      - "3100:3100"
+      - - "${EXTERNAL_PORT:-3101}:3100"
     environment:
       PORT: "3100"
       SERVE_UI: "true"
